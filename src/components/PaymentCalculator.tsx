@@ -1,22 +1,19 @@
 import { useState } from 'react';
+import { paymentMethods } from '@/data/payment-methods';
+import { useLocale } from '@/hooks/useLocale';
 import type { PaymentMethod } from '@/types';
 
-const PAYMENT_METHODS: PaymentMethod[] = [
-  { id: 'visa', name: 'Visa', installments: 6, interestFree: true },
-  { id: 'master', name: 'Mastercard', installments: 6, interestFree: true },
-  { id: 'elo', name: 'Elo', installments: 6, interestFree: true },
-  { id: 'amex', name: 'American Express', installments: 6, interestFree: true },
-  { id: 'hiper', name: 'Hipercard', installments: 6, interestFree: true },
-  { id: 'pix', name: 'PIX', installments: 1, interestFree: true },
-];
-
-function formatCurrency(value: number): string {
-  return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+function formatCurrency(value: number, locale: string): string {
+  return value.toLocaleString(locale === 'en' ? 'en-US' : 'pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  });
 }
 
 export function PaymentCalculator() {
+  const { locale, translate } = useLocale();
   const [amount, setAmount] = useState(150);
-  const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>(PAYMENT_METHODS[0]);
+  const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>(paymentMethods[0]);
 
   const pixDiscount = 0.05;
   const finalAmount = selectedMethod.id === 'pix' ? amount * (1 - pixDiscount) : amount;
@@ -29,17 +26,15 @@ export function PaymentCalculator() {
           <div className="react-payment-calc__header">
             <span className="react-payment-calc__badge">React + TypeScript</span>
             <h2 className="react-payment-calc__title font-display">
-              Simulador de Parcelamento
+              {translate('react.calculator.title')}
             </h2>
-            <p className="react-payment-calc__desc">
-              Calcule em tempo real quanto ficará sua compra em até 6x sem juros.
-            </p>
+            <p className="react-payment-calc__desc">{translate('react.calculator.desc')}</p>
           </div>
 
           <div className="react-payment-calc__body">
             <div className="react-payment-calc__input-group">
               <label htmlFor="amount" className="react-payment-calc__label">
-                Valor da compra
+                {translate('react.calculator.amount')}
               </label>
               <input
                 id="amount"
@@ -52,12 +47,12 @@ export function PaymentCalculator() {
                 className="react-payment-calc__range"
               />
               <span className="react-payment-calc__amount font-price">
-                {formatCurrency(amount)}
+                {formatCurrency(amount, locale)}
               </span>
             </div>
 
             <div className="react-payment-calc__methods">
-              {PAYMENT_METHODS.map((method) => (
+              {paymentMethods.map((method) => (
                 <button
                   key={method.id}
                   type="button"
@@ -74,24 +69,27 @@ export function PaymentCalculator() {
             <div className="react-payment-calc__result">
               {selectedMethod.id === 'pix' ? (
                 <>
-                  <span className="react-payment-calc__result-label">Com desconto PIX (5%)</span>
+                  <span className="react-payment-calc__result-label">
+                    {translate('react.calculator.pixDiscount')}
+                  </span>
                   <span className="react-payment-calc__result-value font-price">
-                    {formatCurrency(finalAmount)}
+                    {formatCurrency(finalAmount, locale)}
                   </span>
                   <span className="react-payment-calc__result-installment">
-                    Economia de {formatCurrency(amount - finalAmount)}
+                    {formatCurrency(amount - finalAmount, locale)}
                   </span>
                 </>
               ) : (
                 <>
                   <span className="react-payment-calc__result-label">
-                    {selectedMethod.installments}x sem juros no {selectedMethod.name}
+                    {selectedMethod.installments}x {translate('react.calculator.interestFree')} —{' '}
+                    {selectedMethod.name}
                   </span>
                   <span className="react-payment-calc__result-value font-price">
-                    {formatCurrency(installmentValue)}
+                    {formatCurrency(installmentValue, locale)}
                   </span>
                   <span className="react-payment-calc__result-installment">
-                    Total: {formatCurrency(finalAmount)}
+                    {translate('react.calculator.result')}: {formatCurrency(finalAmount, locale)}
                   </span>
                 </>
               )}

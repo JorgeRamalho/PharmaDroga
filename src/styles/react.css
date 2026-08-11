@@ -29,6 +29,12 @@
   border-color: var(--color-teal-600);
 }
 
+.react-newsletter__input:focus-visible {
+  border-color: var(--color-teal-600);
+  outline: 3px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
 .react-newsletter__feedback {
   font-size: var(--text-xs);
   font-weight: 500;
@@ -141,6 +147,11 @@
   background: var(--gradient-brand);
   border-color: transparent;
   color: var(--color-white);
+}
+
+.react-payment-calc__method:focus-visible {
+  outline: 3px solid var(--color-teal-500);
+  outline-offset: 2px;
 }
 
 .react-payment-calc__result {

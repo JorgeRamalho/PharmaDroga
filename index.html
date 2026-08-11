@@ -1,328 +1,676 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pharmadroga — Sua saúde com confiança, preços justos e parcelamento em até 6x sem juros em todos os cartões." />
-  <meta name="theme-color" content="#0A5C5C" />
-  <title>Pharmadroga — Saúde, Confiança e Preços Justos</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230A5C5C' rx='20' width='100' height='100'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>+</text></svg>" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pharmadroga — Sua saúde com confiança, preços justos e parcelamento em até 6x sem juros em todos os cartões."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A5C5C" />
+    <!-- Live Server: abra este index.html. CSS + JS estáticos (sem Vite). -->
+    <title>Pharmadroga — Saúde, Confiança e Preços Justos</title>
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <link rel="canonical" href="https://www.pharmadroga.com.br/" />
 
-  <!-- HEADER -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="#" class="logo">
-        <div class="logo__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14h-2v-4H6v-2h4V7h2v4h4v2h-4v4z"/></svg>
+    <!-- Fontes — preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Pharmadroga" />
+    <meta property="og:url" content="https://www.pharmadroga.com.br/" />
+    <meta property="og:title" content="Pharmadroga — Saúde, Confiança e Preços Justos" />
+    <meta
+      property="og:description"
+      content="Sua saúde com confiança, preços justos e parcelamento em até 6x sem juros em todos os cartões. + de 500 lojas no Brasil."
+    />
+    <meta property="og:image" content="https://www.pharmadroga.com.br/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Pharmadroga — rede de drogarias com saúde, confiança e preços justos"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pharmadroga — Saúde, Confiança e Preços Justos" />
+    <meta
+      name="twitter:description"
+      content="Sua saúde com confiança, preços justos e parcelamento em até 6x sem juros em todos os cartões."
+    />
+    <meta name="twitter:image" content="https://www.pharmadroga.com.br/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Pharmadroga — rede de drogarias com saúde, confiança e preços justos"
+    />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230A5C5C' rx='20' width='100' height='100'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>+</text></svg>"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.pharmadroga.com.br/#organization",
+            "name": "Pharmadroga",
+            "url": "https://www.pharmadroga.com.br/",
+            "logo": "https://www.pharmadroga.com.br/og-image.png",
+            "description": "Rede de drogarias com cuidado farmacêutico, preços justos e parcelamento em até 6x sem juros.",
+            "sameAs": []
+          },
+          {
+            "@type": "Pharmacy",
+            "@id": "https://www.pharmadroga.com.br/#pharmacy",
+            "name": "Pharmadroga",
+            "url": "https://www.pharmadroga.com.br/",
+            "image": "https://www.pharmadroga.com.br/og-image.png",
+            "description": "Drogarias em todo o Brasil. Aceitamos todos os cartões, PIX com desconto e entrega rápida.",
+            "parentOrganization": { "@id": "https://www.pharmadroga.com.br/#organization" },
+            "priceRange": "$$",
+            "paymentAccepted": "Visa, Mastercard, Elo, American Express, Hipercard, PIX",
+            "currenciesAccepted": "BRL"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a href="#main" class="skip-link" data-i18n="skipLink">Ir ao conteúdo principal</a>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+      <div class="container header__inner">
+        <a href="#inicio" class="logo" aria-label="Pharmadroga — ir para o início">
+          <div class="logo__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <path
+                d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14h-2v-4H6v-2h4V7h2v4h4v2h-4v4z"
+              />
+            </svg>
+          </div>
+          <span class="logo__text">Pharma<span>droga</span></span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Navegação principal">
+          <a href="#ofertas" class="nav__link" data-i18n="nav.offers">Ofertas</a>
+          <a href="#pagamento" class="nav__link" data-i18n="nav.payment">Pagamento</a>
+          <a href="#marca" class="nav__link" data-i18n="nav.brand">Nossa Marca</a>
+          <a href="#lojas" class="nav__link" data-i18n="nav.stores">Lojas</a>
+        </nav>
+
+        <div class="header__actions">
+          <div class="header-toolbar" aria-label="Preferências">
+            <button
+              type="button"
+              class="header-toolbar__btn"
+              id="langToggle"
+              aria-label="Alternar idioma para inglês"
+            >
+              EN
+            </button>
+          </div>
+          <a href="#lojas" class="btn btn--outline" data-i18n="header.findStore">Encontrar Loja</a>
+          <a href="#ofertas" class="btn btn--primary" data-i18n="header.viewOffers">Ver Ofertas</a>
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="nav"
+          >
+            <span></span><span></span><span></span>
+          </button>
         </div>
-        <span class="logo__text">Pharma<span>droga</span></span>
-      </a>
-
-      <nav class="nav" id="nav" aria-label="Navegação principal">
-        <a href="#ofertas" class="nav__link">Ofertas</a>
-        <a href="#pagamento" class="nav__link">Pagamento</a>
-        <a href="#marca" class="nav__link">Nossa Marca</a>
-        <a href="#lojas" class="nav__link">Lojas</a>
-      </nav>
-
-      <div class="header__actions">
-        <a href="#lojas" class="btn btn--outline">Encontrar Loja</a>
-        <a href="#ofertas" class="btn btn--primary">Ver Ofertas</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero__bg">
-      <div class="hero__pattern"></div>
-    </div>
-    <div class="container hero__content">
-      <div class="hero__text">
-        <div class="hero__badge">
-          <span class="hero__badge-dot"></span>
-          + de 500 lojas em todo o Brasil
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="inicio">
+        <div class="hero__bg">
+          <div class="hero__pattern"></div>
         </div>
-        <h1 class="hero__title">
-          Sua saúde merece<br />
-          <span class="highlight">confiança e economia</span>
-        </h1>
-        <p class="hero__subtitle">
-          A Pharmadroga une cuidado farmacêutico de excelência com os melhores preços.
-          Pague como preferir — todos os cartões, parcelado em até 6x sem juros.
-        </p>
-        <div class="hero__cta">
-          <a href="#ofertas" class="btn btn--primary btn--lg">Explorar Ofertas</a>
-          <a href="#pagamento" class="btn btn--outline btn--lg">Formas de Pagamento</a>
-        </div>
-      </div>
+        <div class="container hero__content">
+          <div class="hero__text">
+            <div class="hero__badge">
+              <span class="hero__badge-dot"></span>
+              <span data-i18n="hero.badge">+ de 500 lojas em todo o Brasil</span>
+            </div>
+            <h1 class="hero__title" data-i18n="hero.title" data-i18n-html="true">
+              Sua saúde merece<br />
+              <span class="highlight">confiança e economia</span>
+            </h1>
+            <p class="hero__subtitle" data-i18n="hero.subtitle">
+              A Pharmadroga une cuidado farmacêutico de excelência com os melhores preços. Pague
+              como preferir — todos os cartões, parcelado em até 6x sem juros.
+            </p>
+            <div class="hero__cta">
+              <a href="#ofertas" class="btn btn--primary btn--lg" data-i18n="hero.ctaOffers"
+                >Explorar Ofertas</a
+              >
+              <a href="#pagamento" class="btn btn--outline btn--lg" data-i18n="hero.ctaPayment"
+                >Formas de Pagamento</a
+              >
+            </div>
+          </div>
 
-      <div class="hero__card">
-        <h2 class="hero__card-title">Pague do seu jeito</h2>
-        <div class="payment-badges">
-          <div class="payment-badge">VISA</div>
-          <div class="payment-badge">Master</div>
-          <div class="payment-badge">Elo</div>
-          <div class="payment-badge">Amex</div>
-          <div class="payment-badge">Hiper</div>
-          <div class="payment-badge">PIX</div>
-        </div>
-        <div class="payment-highlight">
-          <div class="payment-highlight__number font-price">6x</div>
-          <div class="payment-highlight__label">sem juros em todos os cartões</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST BAR -->
-  <section class="trust-bar">
-    <div class="container trust-bar__grid">
-      <div class="trust-item reveal">
-        <div class="trust-item__icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div>
-          <div class="trust-item__title">Farmacêuticos Qualificados</div>
-          <div class="trust-item__desc">Atendimento especializado em todas as lojas</div>
-        </div>
-      </div>
-      <div class="trust-item reveal">
-        <div class="trust-item__icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        </div>
-        <div>
-          <div class="trust-item__title">Preços Competitivos</div>
-          <div class="trust-item__desc">Descontos exclusivos no app e clube fidelidade</div>
-        </div>
-      </div>
-      <div class="trust-item reveal">
-        <div class="trust-item__icon">
-          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        </div>
-        <div>
-          <div class="trust-item__title">Todos os Cartões</div>
-          <div class="trust-item__desc">Visa, Master, Elo, Amex, Hiper e PIX</div>
-        </div>
-      </div>
-      <div class="trust-item reveal">
-        <div class="trust-item__icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <div>
-          <div class="trust-item__title">Entrega Rápida</div>
-          <div class="trust-item__desc">Receba em casa em até 2 horas na sua região</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OFERTAS -->
-  <section class="section offers" id="ofertas">
-    <div class="container">
-      <header class="section__header reveal">
-        <p class="section__eyebrow">Ofertas da Semana</p>
-        <h2 class="section__title">Economia que cuida de você</h2>
-        <p class="section__desc">Produtos selecionados com os melhores preços. Parcele em até 6x sem juros.</p>
-      </header>
-
-      <div class="offers__grid" id="offersGrid">
-        <!-- Produtos renderizados via JavaScript -->
-      </div>
-    </div>
-  </section>
-
-  <!-- PAGAMENTO -->
-  <section class="section payment" id="pagamento">
-    <div class="container">
-      <div class="payment__grid">
-        <div class="payment__visual reveal">
-          <div class="payment__card-mock">
-            <div style="font-size:0.75rem;opacity:0.7;color:#fff;">PHARMADROGA CARD</div>
-            <div class="payment__card-number">•••• •••• •••• 4829</div>
-            <div class="payment__card-brands">
-              <span class="payment__card-brand">VISA</span>
-              <span class="payment__card-brand">Master</span>
-              <span class="payment__card-brand">Elo</span>
-              <span class="payment__card-brand">Amex</span>
-              <span class="payment__card-brand">Hiper</span>
+          <div class="hero__card">
+            <p class="hero__card-title" data-i18n="hero.cardTitle">Pague do seu jeito</p>
+            <div class="payment-badges">
+              <div class="payment-badge">VISA</div>
+              <div class="payment-badge">Master</div>
+              <div class="payment-badge">Elo</div>
+              <div class="payment-badge">Amex</div>
+              <div class="payment-badge">Hiper</div>
+              <div class="payment-badge">PIX</div>
+            </div>
+            <div class="payment-highlight">
+              <div class="payment-highlight__number font-price">6x</div>
+              <div class="payment-highlight__label" data-i18n="hero.installmentLabel">
+                sem juros em todos os cartões
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="payment__features">
-          <header class="section__header" style="text-align:left;margin-bottom:2rem;">
-            <p class="section__eyebrow">Facilidade de Pagamento</p>
-            <h2 class="section__title">Compre sem preocupação</h2>
-            <p class="section__desc">Aceitamos todos os principais cartões de crédito e débito, além de PIX com desconto extra.</p>
+      <!-- TRUST BAR -->
+      <section class="trust-bar">
+        <div class="container trust-bar__grid">
+          <div class="trust-item reveal">
+            <div class="trust-item__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__title" data-i18n="trust.pharmacists.title">
+                Farmacêuticos Qualificados
+              </div>
+              <div class="trust-item__desc" data-i18n="trust.pharmacists.desc">
+                Atendimento especializado em todas as lojas
+              </div>
+            </div>
+          </div>
+          <div class="trust-item reveal">
+            <div class="trust-item__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__title" data-i18n="trust.prices.title">
+                Preços Competitivos
+              </div>
+              <div class="trust-item__desc" data-i18n="trust.prices.desc">
+                Descontos exclusivos no app e clube fidelidade
+              </div>
+            </div>
+          </div>
+          <div class="trust-item reveal">
+            <div class="trust-item__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <rect x="1" y="4" width="22" height="16" rx="2" />
+                <line x1="1" y1="10" x2="23" y2="10" />
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__title" data-i18n="trust.cards.title">Todos os Cartões</div>
+              <div class="trust-item__desc" data-i18n="trust.cards.desc">
+                Visa, Master, Elo, Amex, Hiper e PIX
+              </div>
+            </div>
+          </div>
+          <div class="trust-item reveal">
+            <div class="trust-item__icon">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__title" data-i18n="trust.delivery.title">Entrega Rápida</div>
+              <div class="trust-item__desc" data-i18n="trust.delivery.desc">
+                Receba em casa em até 2 horas na sua região
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFERTAS -->
+      <section class="section offers" id="ofertas">
+        <div class="container">
+          <header class="section__header reveal">
+            <p class="section__eyebrow" data-i18n="offers.eyebrow">Ofertas da Semana</p>
+            <h2 class="section__title" data-i18n="offers.title">Economia que cuida de você</h2>
+            <p class="section__desc" data-i18n="offers.desc">
+              Produtos selecionados com os melhores preços. Parcele em até 6x sem juros.
+            </p>
           </header>
 
-          <div class="payment-feature reveal">
-            <span class="payment-feature__num">6x</span>
-            <div>
-              <div class="payment-feature__title">Parcelamento sem juros</div>
-              <div class="payment-feature__desc">Divida suas compras em até 6 parcelas iguais, sem acréscimo, em qualquer bandeira aceita.</div>
-            </div>
-          </div>
-          <div class="payment-feature reveal">
-            <span class="payment-feature__num">5%</span>
-            <div>
-              <div class="payment-feature__title">Desconto no PIX</div>
-              <div class="payment-feature__desc">Pague via PIX e ganhe 5% de desconto adicional em compras acima de R$ 50.</div>
-            </div>
-          </div>
-          <div class="payment-feature reveal">
-            <span class="payment-feature__num">24h</span>
-            <div>
-              <div class="payment-feature__title">Compra online segura</div>
-              <div class="payment-feature__desc">Ambiente criptografado com certificado SSL. Seus dados sempre protegidos.</div>
-            </div>
+          <div class="offers__grid" id="offersGrid">
+            <!-- Produtos renderizados via JavaScript -->
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- MARCA / DESIGN SYSTEM -->
-  <section class="section brand" id="marca">
-    <div class="container">
-      <header class="section__header reveal">
-        <p class="section__eyebrow">Identidade Visual</p>
-        <h2 class="section__title">Marca que inspira confiança</h2>
-        <p class="section__desc">Cores, tipografia e gradientes pensados para transmitir saúde, economia e facilidade.</p>
-      </header>
-
-      <div class="brand__palette reveal" aria-label="Paleta de cores da marca">
-        <div class="brand__swatch" style="background:#0A5C5C;color:#fff;">
-          <span class="brand__swatch-name">Teal Profundo</span>
-          <span class="brand__swatch-hex">#0A5C5C</span>
-        </div>
-        <div class="brand__swatch" style="background:#148F8F;color:#fff;">
-          <span class="brand__swatch-name">Teal Vivo</span>
-          <span class="brand__swatch-hex">#148F8F</span>
-        </div>
-        <div class="brand__swatch" style="background:#1CB5B5;color:#064949;">
-          <span class="brand__swatch-name">Teal Claro</span>
-          <span class="brand__swatch-hex">#1CB5B5</span>
-        </div>
-        <div class="brand__swatch" style="background:#E85D4C;color:#fff;">
-          <span class="brand__swatch-name">Coral Quente</span>
-          <span class="brand__swatch-hex">#E85D4C</span>
-        </div>
-        <div class="brand__swatch" style="background:#F4A261;color:#1A202C;">
-          <span class="brand__swatch-name">Âmbar Economia</span>
-          <span class="brand__swatch-hex">#F4A261</span>
-        </div>
-        <div class="brand__swatch" style="background:#2D9D78;color:#fff;">
-          <span class="brand__swatch-name">Verde Aprovação</span>
-          <span class="brand__swatch-hex">#2D9D78</span>
-        </div>
-      </div>
-
-      <div class="brand__typography reveal">
-        <div class="type-sample">
-          <div class="type-sample__label">Títulos — Plus Jakarta Sans</div>
-          <div class="type-sample__display">Pharmadroga</div>
-          <p class="type-sample__body">Geométrica, amigável e memorável. O diferencial visual da marca em headlines e CTAs.</p>
-        </div>
-        <div class="type-sample">
-          <div class="type-sample__label">Corpo — Inter</div>
-          <p class="type-sample__body">Legibilidade excepcional para bulas, descrições de produtos e textos longos. Peso 400–600 para hierarquia clara.</p>
-        </div>
-        <div class="type-sample">
-          <div class="type-sample__label">Preços — Space Grotesk</div>
-          <div class="type-sample__price">R$ 29,90</div>
-          <p class="type-sample__body">Números tabulares que destacam ofertas e parcelamentos com personalidade única.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOJAS -->
-  <section class="section stores" id="lojas">
-    <div class="container">
-      <header class="section__header reveal">
-        <p class="section__eyebrow">Presença Nacional</p>
-        <h2 class="section__title">Sempre perto de você</h2>
-        <p class="section__desc">Uma das maiores redes de drogarias do país, com lojas em todas as regiões.</p>
-      </header>
-
-      <div class="stores__stats reveal">
-        <div class="stat">
-          <div class="stat__number" data-count="520">0</div>
-          <div class="stat__label">Lojas no Brasil</div>
-        </div>
-        <div class="stat">
-          <div class="stat__number" data-count="27">0</div>
-          <div class="stat__label">Estados + DF</div>
-        </div>
-        <div class="stat">
-          <div class="stat__number" data-count="15000">0</div>
-          <div class="stat__label">Colaboradores</div>
-        </div>
-        <div class="stat">
-          <div class="stat__number" data-count="8">0</div>
-          <div class="stat__label">Milhões de clientes</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REACT MOUNT -->
-  <div id="react-root"></div>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <a href="#" class="logo">
-            <div class="logo__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14h-2v-4H6v-2h4V7h2v4h4v2h-4v4z"/></svg>
+      <!-- PAGAMENTO -->
+      <section class="section payment" id="pagamento">
+        <div class="container">
+          <div class="payment__grid">
+            <div class="payment__visual reveal">
+              <div class="payment__card-mock">
+                <div style="font-size: 0.75rem; opacity: 0.7; color: #fff">PHARMADROGA CARD</div>
+                <div class="payment__card-number">•••• •••• •••• 4829</div>
+                <div class="payment__card-brands">
+                  <span class="payment__card-brand">VISA</span>
+                  <span class="payment__card-brand">Master</span>
+                  <span class="payment__card-brand">Elo</span>
+                  <span class="payment__card-brand">Amex</span>
+                  <span class="payment__card-brand">Hiper</span>
+                </div>
+              </div>
             </div>
-            <span class="logo__text">Pharma<span>droga</span></span>
-          </a>
-          <p class="footer__desc">Cuidando da sua saúde com confiança, preços justos e as melhores condições de pagamento do mercado.</p>
+
+            <div class="payment__features">
+              <header class="section__header" style="text-align: left; margin-bottom: 2rem">
+                <p class="section__eyebrow" data-i18n="payment.eyebrow">Facilidade de Pagamento</p>
+                <h2 class="section__title" data-i18n="payment.title">Compre sem preocupação</h2>
+                <p class="section__desc" data-i18n="payment.desc">
+                  Aceitamos todos os principais cartões de crédito e débito, além de PIX com
+                  desconto extra.
+                </p>
+              </header>
+
+              <div class="payment-feature reveal">
+                <span class="payment-feature__num">6x</span>
+                <div>
+                  <div class="payment-feature__title" data-i18n="payment.feature1.title">
+                    Parcelamento sem juros
+                  </div>
+                  <div class="payment-feature__desc" data-i18n="payment.feature1.desc">
+                    Divida suas compras em até 6 parcelas iguais, sem acréscimo, em qualquer
+                    bandeira aceita.
+                  </div>
+                </div>
+              </div>
+              <div class="payment-feature reveal">
+                <span class="payment-feature__num">5%</span>
+                <div>
+                  <div class="payment-feature__title" data-i18n="payment.feature2.title">
+                    Desconto no PIX
+                  </div>
+                  <div class="payment-feature__desc" data-i18n="payment.feature2.desc">
+                    Pague via PIX e ganhe 5% de desconto adicional em compras acima de R$ 50.
+                  </div>
+                </div>
+              </div>
+              <div class="payment-feature reveal">
+                <span class="payment-feature__num">24h</span>
+                <div>
+                  <div class="payment-feature__title" data-i18n="payment.feature3.title">
+                    Compra online segura
+                  </div>
+                  <div class="payment-feature__desc" data-i18n="payment.feature3.desc">
+                    Ambiente criptografado com certificado SSL. Seus dados sempre protegidos.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 class="footer__title">Institucional</h3>
-          <ul class="footer__links">
-            <li><a href="#" class="footer__link">Sobre nós</a></li>
-            <li><a href="#" class="footer__link">Trabalhe conosco</a></li>
-            <li><a href="#" class="footer__link">Sustentabilidade</a></li>
-          </ul>
+      </section>
+
+      <!-- MARCA / DESIGN SYSTEM -->
+      <section class="section brand" id="marca">
+        <div class="container">
+          <header class="section__header reveal">
+            <p class="section__eyebrow" data-i18n="brand.eyebrow">Identidade Visual</p>
+            <h2 class="section__title" data-i18n="brand.title">Marca que inspira confiança</h2>
+            <p class="section__desc" data-i18n="brand.desc">
+              Cores, tipografia e gradientes pensados para transmitir saúde, economia e facilidade.
+            </p>
+            <button
+              type="button"
+              class="btn btn--outline brand__export"
+              id="exportBrandPdf"
+              data-i18n="brand.exportPdf"
+            >
+              Baixar guia de marca (PDF)
+            </button>
+          </header>
+
+          <div class="brand__palette reveal" aria-label="Paleta de cores da marca">
+            <div class="brand__swatch" style="background: #0a5c5c; color: #fff">
+              <span class="brand__swatch-name">Teal Profundo</span>
+              <span class="brand__swatch-hex">#0A5C5C</span>
+            </div>
+            <div class="brand__swatch" style="background: #148f8f; color: #fff">
+              <span class="brand__swatch-name">Teal Vivo</span>
+              <span class="brand__swatch-hex">#148F8F</span>
+            </div>
+            <div class="brand__swatch" style="background: #1cb5b5; color: #064949">
+              <span class="brand__swatch-name">Teal Claro</span>
+              <span class="brand__swatch-hex">#1CB5B5</span>
+            </div>
+            <div class="brand__swatch" style="background: #e85d4c; color: #fff">
+              <span class="brand__swatch-name">Coral Quente</span>
+              <span class="brand__swatch-hex">#E85D4C</span>
+            </div>
+            <div class="brand__swatch" style="background: #f4a261; color: #1a202c">
+              <span class="brand__swatch-name">Âmbar Economia</span>
+              <span class="brand__swatch-hex">#F4A261</span>
+            </div>
+            <div class="brand__swatch" style="background: #2d9d78; color: #fff">
+              <span class="brand__swatch-name">Verde Aprovação</span>
+              <span class="brand__swatch-hex">#2D9D78</span>
+            </div>
+          </div>
+
+          <div class="brand__typography reveal">
+            <div class="type-sample">
+              <div class="type-sample__label">Títulos — Plus Jakarta Sans</div>
+              <div class="type-sample__display">Pharmadroga</div>
+              <p class="type-sample__body">
+                Geométrica, amigável e memorável. O diferencial visual da marca em headlines e CTAs.
+              </p>
+            </div>
+            <div class="type-sample">
+              <div class="type-sample__label">Corpo — Inter</div>
+              <p class="type-sample__body">
+                Legibilidade excepcional para bulas, descrições de produtos e textos longos. Peso
+                400–600 para hierarquia clara.
+              </p>
+            </div>
+            <div class="type-sample">
+              <div class="type-sample__label">Preços — Space Grotesk</div>
+              <div class="type-sample__price">R$ 29,90</div>
+              <p class="type-sample__body">
+                Números tabulares que destacam ofertas e parcelamentos com personalidade única.
+              </p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 class="footer__title">Atendimento</h3>
-          <ul class="footer__links">
-            <li><a href="#" class="footer__link">Central de ajuda</a></li>
-            <li><a href="#" class="footer__link">Trocas e devoluções</a></li>
-            <li><a href="#" class="footer__link">Fale conosco</a></li>
-          </ul>
+      </section>
+
+      <!-- LOJAS -->
+      <section class="section stores" id="lojas">
+        <div class="container">
+          <header class="section__header reveal">
+            <p class="section__eyebrow" data-i18n="stores.eyebrow">Presença Nacional</p>
+            <h2 class="section__title" data-i18n="stores.title">Sempre perto de você</h2>
+            <p class="section__desc" data-i18n="stores.desc">
+              Uma das maiores redes de drogarias do país, com lojas em todas as regiões.
+            </p>
+          </header>
+
+          <div class="store-finder reveal">
+            <h3 class="store-finder__title" data-i18n="stores.finderTitle">
+              Encontre a loja mais próxima
+            </h3>
+            <p class="store-finder__desc" data-i18n="stores.finderDesc">
+              Digite seu CEP para ver unidades na região (demonstração).
+            </p>
+            <form class="store-finder__form" id="storeFinderForm">
+              <label class="store-finder__label" for="storeCepInput" data-i18n="stores.cepLabel"
+                >CEP</label
+              >
+              <input
+                class="store-finder__input"
+                id="storeCepInput"
+                name="cep"
+                type="text"
+                inputmode="numeric"
+                autocomplete="postal-code"
+                maxlength="9"
+                placeholder="00000-000"
+                data-i18n="stores.cepPlaceholder"
+                required
+              />
+              <button
+                type="submit"
+                class="btn btn--primary"
+                id="storeFinderSubmit"
+                data-i18n="stores.search"
+              >
+                Buscar lojas
+              </button>
+            </form>
+            <div class="store-finder__results" id="storeFinderResults" aria-live="polite"></div>
+          </div>
+
+          <div class="stores__stats reveal">
+            <div class="stat">
+              <div class="stat__number" data-count="520">0</div>
+              <div class="stat__label" data-i18n="stores.stat1">Lojas no Brasil</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number" data-count="27">0</div>
+              <div class="stat__label" data-i18n="stores.stat2">Estados + DF</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number" data-count="15000">0</div>
+              <div class="stat__label" data-i18n="stores.stat3">Colaboradores</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number" data-count="8">0</div>
+              <div class="stat__label" data-i18n="stores.stat4">Milhões de clientes</div>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 class="footer__title">Pagamento</h3>
-          <ul class="footer__links">
-            <li><a href="#pagamento" class="footer__link">6x sem juros</a></li>
-            <li><a href="#pagamento" class="footer__link">Desconto PIX</a></li>
-            <li><a href="#pagamento" class="footer__link">Cartões aceitos</a></li>
-          </ul>
+      </section>
+
+      <!-- Newsletter + calculadora (vanilla, sem React) -->
+      <div id="react-root">
+        <div class="react-banner">
+          <div class="container">
+            <form class="react-newsletter" id="newsletterForm">
+              <p>
+                <strong>Receba ofertas exclusivas</strong>
+                Cadastre-se e fique por dentro das melhores promoções da semana.
+              </p>
+              <div class="react-newsletter__form">
+                <input
+                  type="email"
+                  id="newsletterEmail"
+                  class="react-newsletter__input"
+                  placeholder="seu@email.com"
+                  aria-label="E-mail para newsletter"
+                  required
+                />
+                <button type="submit" class="btn btn--coral">Inscrever</button>
+              </div>
+              <span
+                class="react-newsletter__feedback"
+                id="newsletterFeedback"
+                role="status"
+                aria-live="polite"
+                hidden
+              ></span>
+            </form>
+          </div>
+        </div>
+
+        <section class="react-payment-calc" aria-labelledby="calcTitle">
+          <div class="container">
+            <div class="react-payment-calc__inner">
+              <div class="react-payment-calc__header">
+                <span class="react-payment-calc__badge">Calculadora</span>
+                <h2 class="react-payment-calc__title font-display" id="calcTitle">
+                  Simule seu parcelamento
+                </h2>
+                <p class="react-payment-calc__desc">
+                  Escolha o valor e a forma de pagamento para ver as condições.
+                </p>
+              </div>
+
+              <div class="react-payment-calc__body">
+                <div class="react-payment-calc__input-group">
+                  <label for="calcAmount" class="react-payment-calc__label">Valor da compra</label>
+                  <input
+                    id="calcAmount"
+                    type="range"
+                    min="10"
+                    max="1000"
+                    step="10"
+                    value="150"
+                    class="react-payment-calc__range"
+                  />
+                  <span class="react-payment-calc__amount font-price" id="calcAmountLabel"
+                    >R$&nbsp;150,00</span
+                  >
+                </div>
+
+                <div class="react-payment-calc__methods" id="calcMethods"></div>
+
+                <div class="react-payment-calc__result">
+                  <span class="react-payment-calc__result-label" id="calcResultLabel"></span>
+                  <span class="react-payment-calc__result-value font-price" id="calcResultValue"></span>
+                  <span
+                    class="react-payment-calc__result-installment"
+                    id="calcResultInstallment"
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <a href="#inicio" class="logo" aria-label="Pharmadroga — ir para o início">
+              <div class="logo__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path
+                    d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14h-2v-4H6v-2h4V7h2v4h4v2h-4v4z"
+                  />
+                </svg>
+              </div>
+              <span class="logo__text">Pharma<span>droga</span></span>
+            </a>
+            <p class="footer__desc" data-i18n="footer.desc">
+              Cuidando da sua saúde com confiança, preços justos e as melhores condições de
+              pagamento do mercado.
+            </p>
+          </div>
+          <div>
+            <h3 class="footer__title" data-i18n="footer.institutional">Institucional</h3>
+            <ul class="footer__links">
+              <li>
+                <a href="#" class="footer__link" data-info-modal="sobre" data-i18n="footer.about"
+                  >Sobre nós</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="footer__link"
+                  data-info-modal="carreiras"
+                  data-i18n="footer.careers"
+                  >Trabalhe conosco</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="footer__link"
+                  data-info-modal="sustentabilidade"
+                  data-i18n="footer.sustainability"
+                  >Sustentabilidade</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer__title" data-i18n="footer.support">Atendimento</h3>
+            <ul class="footer__links">
+              <li>
+                <a href="#" class="footer__link" data-info-modal="ajuda" data-i18n="footer.help"
+                  >Central de ajuda</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer__link" data-info-modal="trocas" data-i18n="footer.returns"
+                  >Trocas e devoluções</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="footer__link"
+                  data-info-modal="contato"
+                  data-i18n="footer.contact"
+                  >Fale conosco</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer__title" data-i18n="footer.payment">Pagamento</h3>
+            <ul class="footer__links">
+              <li>
+                <a href="#pagamento" class="footer__link" data-i18n="footer.installments"
+                  >6x sem juros</a
+                >
+              </li>
+              <li>
+                <a href="#pagamento" class="footer__link" data-i18n="footer.pix">Desconto PIX</a>
+              </li>
+              <li>
+                <a href="#pagamento" class="footer__link" data-i18n="footer.cards"
+                  >Cartões aceitos</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span data-i18n="footer.rights"
+            >&copy; 2026 Pharmadroga. Todos os direitos reservados.</span
+          >
+          <span data-i18n="footer.cnpj">CNPJ fictício — projeto demonstrativo</span>
         </div>
       </div>
-      <div class="footer__bottom">
-        <span>&copy; 2026 Pharmadroga. Todos os direitos reservados.</span>
-        <span>CNPJ 00.000.000/0001-00</span>
+    </footer>
+
+    <div class="info-modal" id="infoModal" hidden>
+      <div class="info-modal__backdrop" data-close-modal></div>
+      <div
+        class="info-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="infoModalTitle"
+      >
+        <button type="button" class="info-modal__close" id="infoModalClose" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="info-modal__title" id="infoModalTitle"></h2>
+        <div class="info-modal__body" id="infoModalBody"></div>
       </div>
     </div>
-  </footer>
 
-  <script type="module" src="/js/main.js"></script>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="js/main.js" defer></script>
+  </body>
 </html>

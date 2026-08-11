@@ -1,0 +1,106 @@
+﻿/* ==========================================================================
+   PHARMADROGA â€” Design System & Brand Tokens
+   ==========================================================================
+   ANÃLISE DE MARCA
+   --------------------------------------------------------------------------
+   Posicionamento: rede de drogarias de grande escala, acessÃ­vel e confiÃ¡vel.
+   Pilares visuais: confianÃ§a (saÃºde), economia (preÃ§o justo), facilidade (pagamento).
+
+   PALETA â€” sensibilidade cromÃ¡tica
+   --------------------------------------------------------------------------
+   â€¢ Teal Profundo (#0A5C5C) â€” autoridade clÃ­nica, estabilidade, credibilidade
+   â€¢ Teal Vivo (#148F8F) â€” frescor farmacÃªutico, modernidade
+   â€¢ Menta Suave (#E8F5F4) â€” limpeza, acolhimento, respiro visual
+   â€¢ Coral Quente (#E85D4C) â€” ofertas e urgÃªncia positiva (sem agressividade)
+   â€¢ Verde AprovaÃ§Ã£o (#2D9D78) â€” pagamento seguro, confirmaÃ§Ã£o, parcelamento
+   â€¢ Ã‚mbar Economia (#F4A261) â€” destaque de preÃ§o baixo, valor percebido
+   â€¢ Neutros quentes â€” legibilidade e conforto em telas longas
+
+   GRADIENTE INSTITUCIONAL (135Â°)
+   --------------------------------------------------------------------------
+   #0A5C5C â†’ #0E7A7A â†’ #148F8F â†’ #1CB5B5
+   Transmite: confianÃ§a progressiva + inovaÃ§Ã£o acessÃ­vel
+
+   TIPOGRAFIA â€” diferencial da marca
+   --------------------------------------------------------------------------
+   â€¢ Plus Jakarta Sans â€” tÃ­tulos: geomÃ©trica, amigÃ¡vel, memorÃ¡vel
+   â€¢ Inter â€” corpo: mÃ¡xima legibilidade em listas de produtos e textos longos
+   â€¢ Space Grotesk â€” preÃ§os e nÃºmeros: tabular, destaque comercial Ãºnico
+   ========================================================================== */
+
+:root {
+  /* Cores primÃ¡rias */
+  --color-teal-900: #064949;
+  --color-teal-800: #0a5c5c;
+  --color-teal-700: #0e7a7a;
+  --color-teal-600: #148f8f;
+  --color-teal-500: #1cb5b5;
+  --color-teal-100: #e8f5f4;
+  --color-teal-50: #f2fafa;
+
+  /* Acentos */
+  --color-coral: #e85d4c;
+  --color-coral-light: #fdecea;
+  --color-amber: #f4a261;
+  --color-amber-light: #fef3e6;
+  --color-green: #2d9d78;
+  --color-green-light: #e6f6f0;
+
+  /* Neutros */
+  --color-white: #ffffff;
+  --color-gray-50: #f7f9fa;
+  --color-gray-100: #edf2f4;
+  --color-gray-300: #cbd5e0;
+  --color-gray-500: #718096;
+  --color-gray-700: #4a5568;
+  --color-gray-900: #1a202c;
+
+  /* Gradiente institucional */
+  --gradient-brand: linear-gradient(135deg, #0a5c5c 0%, #0e7a7a 35%, #148f8f 70%, #1cb5b5 100%);
+  --gradient-hero-overlay: linear-gradient(
+    180deg,
+    rgba(6, 73, 73, 0.85) 0%,
+    rgba(10, 92, 92, 0.6) 50%,
+    rgba(28, 181, 181, 0.3) 100%
+  );
+  --gradient-card-shine: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  --gradient-payment: linear-gradient(135deg, #2d9d78 0%, #1cb5b5 100%);
+
+  /* Tipografia */
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-price: 'Space Grotesk', 'Plus Jakarta Sans', monospace;
+
+  /* Escala tipogrÃ¡fica */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* EspaÃ§amento & forma */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 3px rgba(10, 92, 92, 0.08);
+  --shadow-md: 0 4px 20px rgba(10, 92, 92, 0.12);
+  --shadow-lg: 0 12px 40px rgba(10, 92, 92, 0.16);
+  --shadow-glow: 0 0 40px rgba(28, 181, 181, 0.25);
+
+  /* TransiÃ§Ãµes */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+}

@@ -33,35 +33,44 @@
 :root {
   /* Cores primárias */
   --color-teal-900: #064949;
-  --color-teal-800: #0A5C5C;
-  --color-teal-700: #0E7A7A;
-  --color-teal-600: #148F8F;
-  --color-teal-500: #1CB5B5;
-  --color-teal-100: #E8F5F4;
-  --color-teal-50: #F2FAFA;
+  --color-teal-800: #0a5c5c;
+  --color-teal-700: #0e7a7a;
+  --color-teal-600: #148f8f;
+  --color-teal-500: #1cb5b5;
+  --color-teal-100: #e8f5f4;
+  --color-teal-50: #f2fafa;
 
   /* Acentos */
-  --color-coral: #E85D4C;
-  --color-coral-light: #FDECEA;
-  --color-amber: #F4A261;
-  --color-amber-light: #FEF3E6;
-  --color-green: #2D9D78;
-  --color-green-light: #E6F6F0;
+  --color-coral: #e85d4c;
+  --color-coral-light: #fdecea;
+  --color-amber: #f4a261;
+  --color-amber-light: #fef3e6;
+  --color-green: #2d9d78;
+  --color-green-light: #e6f6f0;
 
   /* Neutros */
-  --color-white: #FFFFFF;
-  --color-gray-50: #F7F9FA;
-  --color-gray-100: #EDF2F4;
-  --color-gray-300: #CBD5E0;
+  --color-white: #ffffff;
+  --color-gray-50: #f7f9fa;
+  --color-gray-100: #edf2f4;
+  --color-gray-300: #cbd5e0;
   --color-gray-500: #718096;
-  --color-gray-700: #4A5568;
-  --color-gray-900: #1A202C;
+  --color-gray-700: #4a5568;
+  --color-gray-900: #1a202c;
 
   /* Gradiente institucional */
-  --gradient-brand: linear-gradient(135deg, #0A5C5C 0%, #0E7A7A 35%, #148F8F 70%, #1CB5B5 100%);
-  --gradient-hero-overlay: linear-gradient(180deg, rgba(6, 73, 73, 0.85) 0%, rgba(10, 92, 92, 0.6) 50%, rgba(28, 181, 181, 0.3) 100%);
-  --gradient-card-shine: linear-gradient(145deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 60%);
-  --gradient-payment: linear-gradient(135deg, #2D9D78 0%, #1CB5B5 100%);
+  --gradient-brand: linear-gradient(135deg, #0a5c5c 0%, #0e7a7a 35%, #148f8f 70%, #1cb5b5 100%);
+  --gradient-hero-overlay: linear-gradient(
+    180deg,
+    rgba(6, 73, 73, 0.85) 0%,
+    rgba(10, 92, 92, 0.6) 50%,
+    rgba(28, 181, 181, 0.3) 100%
+  );
+  --gradient-card-shine: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  --gradient-payment: linear-gradient(135deg, #2d9d78 0%, #1cb5b5 100%);
 
   /* Tipografia */
   --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -99,7 +108,9 @@
 }
 
 /* Reset & base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -142,9 +153,16 @@ button {
 }
 
 /* Utilitários tipográficos */
-.font-display { font-family: var(--font-display); }
-.font-body { font-family: var(--font-body); }
-.font-price { font-family: var(--font-price); font-variant-numeric: tabular-nums; }
+.font-display {
+  font-family: var(--font-display);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+.font-price {
+  font-family: var(--font-price);
+  font-variant-numeric: tabular-nums;
+}
 
 /* Container */
 .container {
@@ -405,7 +423,7 @@ button {
 }
 
 .hero__title .highlight {
-  background: linear-gradient(90deg, var(--color-amber), #FFD166);
+  background: linear-gradient(90deg, var(--color-amber), #ffd166);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1022,15 +1040,23 @@ button {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.2); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
 }
 
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
 }
 
 .reveal.visible {

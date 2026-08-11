@@ -1,0 +1,53 @@
+{
+  "updatedAt": "2026-08-11T00:00:00.000Z",
+  "products": [
+    {
+      "id": 1,
+      "name": "Vitamina D3 2000UI — 60 cápsulas",
+      "priceOld": 45.9,
+      "price": 29.9,
+      "discount": "-35%",
+      "icon": "vitamin"
+    },
+    {
+      "id": 2,
+      "name": "Protetor Solar FPS 50 — 120ml",
+      "priceOld": 89.9,
+      "price": 59.9,
+      "discount": "-33%",
+      "icon": "sun"
+    },
+    {
+      "id": 3,
+      "name": "Omeprazol 20mg — 28 comprimidos",
+      "priceOld": 32.5,
+      "price": 18.9,
+      "discount": "-42%",
+      "icon": "pill"
+    },
+    {
+      "id": 4,
+      "name": "Shampoo Anticaspa — 400ml",
+      "priceOld": 38.9,
+      "price": 24.9,
+      "discount": "-36%",
+      "icon": "bottle"
+    },
+    {
+      "id": 5,
+      "name": "Termômetro Digital Infravermelho",
+      "priceOld": 129.9,
+      "price": 79.9,
+      "discount": "-38%",
+      "icon": "thermo"
+    },
+    {
+      "id": 6,
+      "name": "Whey Protein 900g — Chocolate",
+      "priceOld": 159.9,
+      "price": 99.9,
+      "discount": "-38%",
+      "icon": "protein"
+    }
+  ]
+}

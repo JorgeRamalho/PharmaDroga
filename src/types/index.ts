@@ -1,10 +1,12 @@
+export type ProductIcon = 'vitamin' | 'sun' | 'pill' | 'bottle' | 'thermo' | 'protein';
+
 export interface Product {
   id: number;
   name: string;
   priceOld: number;
   price: number;
   discount: string;
-  icon: string;
+  icon: ProductIcon;
 }
 
 export interface PaymentMethod {

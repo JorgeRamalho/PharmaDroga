@@ -1,8 +1,10 @@
 import { useState, type FormEvent } from 'react';
+import { useLocale } from '@/hooks/useLocale';
 
 type SubmitStatus = 'idle' | 'success' | 'error';
 
 export function NewsletterBanner() {
+  const { translate } = useLocale();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<SubmitStatus>('idle');
 
@@ -24,32 +26,33 @@ export function NewsletterBanner() {
       <div className="container">
         <form className="react-newsletter" onSubmit={handleSubmit}>
           <p>
-            <strong>Clube Pharmadroga</strong> — Receba ofertas exclusivas e cupons de desconto.
+            <strong>{translate('react.newsletter.title')}</strong>{' '}
+            {translate('react.newsletter.desc')}
           </p>
           <div className="react-newsletter__form">
             <input
               type="email"
-              placeholder="Seu melhor e-mail"
+              placeholder={translate('react.newsletter.placeholder')}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
                 if (status !== 'idle') setStatus('idle');
               }}
               className="react-newsletter__input"
-              aria-label="E-mail para newsletter"
+              aria-label={translate('react.newsletter.emailLabel')}
             />
             <button type="submit" className="btn btn--coral">
-              Quero economizar
+              {translate('react.newsletter.submit')}
             </button>
           </div>
           {status === 'success' && (
-            <span className="react-newsletter__feedback success">
-              Inscrição realizada! Verifique seu e-mail.
+            <span className="react-newsletter__feedback success" role="status" aria-live="polite">
+              {translate('react.newsletter.success')}
             </span>
           )}
           {status === 'error' && (
-            <span className="react-newsletter__feedback error">
-              Informe um e-mail válido.
+            <span className="react-newsletter__feedback error" role="status" aria-live="assertive">
+              {translate('react.newsletter.error')}
             </span>
           )}
         </form>
